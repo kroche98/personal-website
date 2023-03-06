@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <div>
+      <h1>Kevin Roche</h1>
+      <p>Software Engineer, Genealogist, and Life-Long Learner</p>
+      <div>
+        • <a href="/">HOME</a> 
+        • <a href="/games">PUZZLES &amp; GAMES</a> 
+        • <a href="/genealogy">GENEALOGY</a> 
+        • <a href="/phil-theo">PHILOSOPHY &amp; THEOLOGY</a> 
+        • <a href="/static/resume.pdf">RESUME</a> 
+        • <a href="/services">SERVICES</a> 
+        • <a href="/contact">CONTACT</a> •
+      </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    <div>
+      <p>©2023 Kevin Roche.</p>
+    </div>
+  </body>
+</html>

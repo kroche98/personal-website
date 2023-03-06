@@ -1,0 +1,10 @@
+.vscode
+Include
+Lib
+__pycache__
+production_files
+db.sqlite3
+pyvenv.cfg
+Scripts
+secrets.txt
+share

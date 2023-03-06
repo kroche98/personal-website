@@ -1,0 +1,50 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Kevin Roche
+{% endblock title %}
+
+{% block content %}
+  <div>
+    <img src="http://via.placeholder.com/400x400" alt="">
+    <p>I'm a guy.</p>
+    {% lorem 2 p %}  
+  </div>
+
+  <div>
+    <h2>Software Development</h2>
+    {% lorem 3 p %}
+    <img src="http://via.placeholder.com/400x400" alt="">
+  </div>
+
+  <div>
+    <h2>Work Experience</h2>
+    <a href="/static/resume.pdf">View my Resume</a>
+    <a href="https://www.linkedin.com/in/kroche98/">View my LinkedIn</a>
+    <a href="https://www.github.com/kroche98">View my GitHub</a>
+  </div>
+
+  <div>
+    <h2>Puzzles and Games</h2>
+    <div>Since I was a kid, I've been lorem ipsum. Here's my <a href="/thesis">thesis</a>.</div>
+    <ul>
+      <li>
+        <a href="/games/twixt">TwixT</a>
+      </li>
+      <li>
+        <a href="/games/fifteen">Classic Fifteen Puzzle</a>
+      </li>
+      <li>
+        <a href="/games/rubiks">Rubik's Cube</a>
+      </li>
+    </ul>
+    <img src="http://via.placeholder.com/400x400" alt="">
+  </div>
+
+  <div>
+    <h2>Genealogy</h2>
+    <img src="http://via.placeholder.com/400x400" alt="">
+    {% lorem 2 p %}
+    <p><a href="/genealogy/search">Click here</a> to search.</p>
+  </div>
+{% endblock content %}

@@ -1,0 +1,39 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Genealogy
+{% endblock title %}
+
+{% block content %}
+  <h1>Genealogy</h1>
+  {% lorem %}
+  <ul>
+    <li>
+      <a href="/genealogy/search?collection=1">Placentia, Newfoundland, Canada: Marriages (c.1808-1899)</a>
+    </li>
+    <li>
+      <a href="/genealogy/search?collection=2">Schoenenbourg, Alsace, France: Baptisms (1685-1727)</a>
+    </li>
+    <li>
+      <a href="/genealogy/search?collection=3">Schoenenbourg, Alsace, France, Marriages (1687-1726)</a>
+    </li>
+  </ul>
+  {% lorem %}
+  <ul>
+    <li>
+      <a href="/genealogy/trees/babe-ruth">George Herman Ruth</a>
+    </li>
+    <li>
+      <a href="/genealogy/trees/chuck-connors">Kevin Joseph Aloysius Connors</a>
+    </li>
+    <li>
+      <a href="/genealogy/trees/bishop-bares">Nikolaus Bares</a>
+    </li>
+    <li>
+      <a href="/genealogy/trees/bishop-roche">Edward Patrick Roche</a>
+    </li>
+    <li>
+      <a href="/genealogy/trees/schoeffler">St. Augustin Schoeffler</a>
+    </li>
+  </ul>
+{% endblock content %}

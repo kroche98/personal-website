@@ -1,0 +1,25 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Family Tree of {{ slug }}
+{% endblock title %}
+
+{% block content %}
+  <h1>Family Tree of {{ slug }}</h1>
+  {% lorem %}
+  <img src="http://via.placeholder.com/400x400" alt="">
+
+  <h2>Ancestor Report of {{ slug }}</h2>
+  <p>1. John Smith</p>
+  <p>born 1800</p>
+  <p>died 1900</p>
+
+  <h2>Parents</h2>
+  <p>2. James Smith</p>
+  <p>born 1770</p>
+  <p>died 1850</p>
+  <p>3. Jane Doe</p>
+  <p>born 1775</p>
+  <p>died 1825</p>
+
+{% endblock content %}
