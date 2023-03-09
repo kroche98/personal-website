@@ -8,3 +8,4 @@ pyvenv.cfg
 Scripts
 secrets.txt
 share
+personal_site/styles/css

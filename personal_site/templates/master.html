@@ -1,28 +1,63 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock title %}</title>
+    <link type="text/css" rel="stylesheet" href={% static 'materialize.css' %}>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT Serif:400,400italic,700bold">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT Sans">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
   <body>
-    <div>
-      <h1>Kevin Roche</h1>
-      <p>Software Engineer, Genealogist, and Life-Long Learner</p>
-      <div>
-        • <a href="/">HOME</a> 
-        • <a href="/games">PUZZLES &amp; GAMES</a> 
-        • <a href="/genealogy">GENEALOGY</a> 
-        • <a href="/phil-theo">PHILOSOPHY &amp; THEOLOGY</a> 
-        • <a href="/static/resume.pdf">RESUME</a> 
-        • <a href="/services">SERVICES</a> 
-        • <a href="/contact">CONTACT</a> •
+    <header class="deep-blue">
+      <nav class="nav-extended">
+        <div class="nav-wrapper">
+          <a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <div class="center header-container">
+            <a class="header-title" href="/">Kevin Roche</a>
+            <div class="header-subtitle">Software Engineer, Genealogist, and Life-Long Learner</div>
+          </div>
+        </div>
+        <div class="nav-content center hide-on-med-and-down">
+          <div class="navbar-divider"></div>
+          <ul class="tabs tabs-transparent">
+            <li class="tab"><a href="/" target="_self"{% if active_page == 'homepage' %} class="active"{% endif %}>Home</a></li>
+            <li class="tab"><a href="/games" target="_self"{% if active_page == 'games' %} class="active"{% endif %}>Puzzles &amp; Games</a></li>
+            <li class="tab"><a href="/genealogy" target="_self"{% if active_page == 'genealogy' %} class="active"{% endif %}>Genealogy</a></li>
+            <li class="tab"><a href="/phil-theo" target="_self"{% if active_page == 'phil-theo' %} class="active"{% endif %}>Philosophy &amp; Theology</a></li>
+            <li class="tab"><a href="/static/resume.pdf" target="_self">Resume</a></li>
+            <li class="tab"><a href="/services" target="_self"{% if active_page == 'services' %} class="active"{% endif %}>Services</a></li>
+            <li class="tab"><a href="/contact" target="_self"{% if active_page == 'contact' %} class="active"{% endif %}>Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      <ul id="slide-out" class="sidenav">
+        <li><a class="truncate uppercase" href="/">Home</a></li>
+        <li><a class="truncate uppercase" href="/games">Puzzles &amp; Games</a></li>
+        <li><a class="truncate uppercase" href="/genealogy">Genealogy</a></li>
+        <li><a class="truncate uppercase" href="/phil-theo">Philosophy &amp; Theology</a></li>
+        <li><a class="truncate uppercase" href="/static/resume.pdf">Resume</a></li>
+        <li><a class="truncate uppercase" href="/services">Services</a></li>
+        <li><a class="truncate uppercase" href="/contact">Contact</a></li>
+      </ul>
+    </header>
+
+    <main>
+      {% block content %}
+      {% endblock content %}
+    </main>
+    
+    <footer class="page-footer">
+      <div class="container hcenter">
+        <div class="footer-copyright">© 2023 Kevin Roche.</div>
       </div>
-    </div>
+    </footer>
 
-    {% block content %}
-    {% endblock %}
-
-    <div>
-      <p>©2023 Kevin Roche.</p>
-    </div>
+    <script>
+      M.AutoInit();
+    </script>
   </body>
 </html>

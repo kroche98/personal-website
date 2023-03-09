@@ -3,7 +3,7 @@ from django.template import loader
 
 def genealogy(request):
     template = loader.get_template('genealogy.html')
-    return HttpResponse(template.render())
+    return HttpResponse(template.render(context={'active_page': 'genealogy'}))
 
 def search(request):
     try:
@@ -11,16 +11,26 @@ def search(request):
     except:
         collection = None
     template = loader.get_template('search.html')
-    return HttpResponse(template.render(context={'collection': collection}))
+    return HttpResponse(template.render(context={
+        'active_page': 'genealogy',
+        'collection': collection
+    }))
 
 def trees(request, slug):
     template = loader.get_template('trees.html')
-    return HttpResponse(template.render(context={'slug': slug}))
+    return HttpResponse(template.render(context={
+        'active_page': 'genealogy',
+        'slug': slug
+    }))
 
 def results(request):
     template = loader.get_template('results.html')
-    return HttpResponse(template.render())
+    return HttpResponse(template.render({'active_page': 'genealogy'}))
 
 def record(request, collection_id, record_id):
     template = loader.get_template('record.html')
-    return HttpResponse(template.render(context={'collection_id': collection_id, 'record_id': record_id}))
+    return HttpResponse(template.render(context={
+        'active_page': 'genealogy',
+        'collection_id': collection_id,
+        'record_id': record_id
+    }))

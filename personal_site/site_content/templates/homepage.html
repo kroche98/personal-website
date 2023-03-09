@@ -1,50 +1,108 @@
 {% extends "master.html" %}
 
+{% load static %}
+
 {% block title %}
   Kevin Roche
 {% endblock title %}
 
 {% block content %}
-  <div>
-    <img src="http://via.placeholder.com/400x400" alt="">
-    <p>I'm a guy.</p>
-    {% lorem 2 p %}  
+  <div class="page-section light-section">
+    <div class="container">
+      <div class="row vcenter">
+        <div class="col m12 l5 center">
+          <img src={% static 'profile2.png' %} class="section-circle-img">
+        </div>
+        <div class="col m12 l7">
+          <p>I’m a young software engineer with strong foundations in math and algorithms and a relentless attention to detail. I have extensive experience in Python and full-stack web development, and I’m familiar with a wide range of other languages and technologies.</p>
+          <p>I’m a quick learner and am voraciously curious. Apart from computer science, my interests include mathematical puzzles, mechanical puzzles, linguistics, genealogy, philosophy, theology, and psychology. This website serves as a showcase of my interests and some of the things I’ve created.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <h2>Software Development</h2>
-    {% lorem 3 p %}
-    <img src="http://via.placeholder.com/400x400" alt="">
+  <div class="sea-blue section-divider"></div>
+  
+  <div class="page-section dark-section">
+    <div class="container">
+      <h4 class="center section-header">Software Development</h4>
+      <div class="row vcenter">
+        <div class="col m12 l7">
+          <p>I’ve been programming since I was about 10. My initial attempts included such programs as a very simple world exploration game called CityMan which I made with my friend Peter using the Python package Pygame. Since then, I’ve written numerous other programs, including personal productivity software and utilities to help me with genealogy research.</p>
+          <p>My professional experience includes building a full-stack kiosk application from scratch using Vue.js and PostgreSQL. I also worked with a financial research group developing 10,000 lines of Python code to scrape, clean, process, store, and analyze 25 years of financial data for every publicly-traded American company. (And in the process, I taught myself enough finance and economics to contribute meaningfully to the theoretical finance side of the project.)</p>
+          <p>I’ve worked extensively with Python and JavaScript, used Docker and various SQL and NoSQL databases, and dabbled in C++, Java, Rust, LISP, and much more. My strategy combines an enthusiastic “jump in and start programming” attitude with a pragmatic attention to detail. I always seek to proactively clarify requirements and anticipate potential challenges and pitfalls.</p>
+        </div>
+        <div class="col m12 l5 center">
+          <img src={% static 'pexels-nemuel-sereti-6424587_cropped.jpg' %} class="section-circle-img">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="sea-blue section-divider"></div>
+  
+  <div class="page-section light-section">
+    <div class="container">
+      <h4 class="center section-header">Work Experience</h4>
+      <div class="hcenter">
+        <div class="flex-column">
+          <a class="vcenter-nowrap btn-lg-round truncate" href="/static/resume.pdf">
+            <img class="svg-icon" src={% static '7218126_resume_business_cv_work_job_icon.svg' %} alt="">
+            View my Resume
+          </a>
+          <a class="vcenter-nowrap btn-lg-round truncate" href="https://www.linkedin.com/in/kroche98/">
+            <img class="svg-icon" src={% static '5305157_connection_linkedin_network_linkedin_logo_icon.svg' %} alt="">
+            View my LinkedIn
+          </a>
+          <a class="vcenter-nowrap btn-lg-round truncate" href="https://www.github.com/kroche98">
+            <img class="svg-icon" src={% static '211904_social_github_icon.svg' %} alt="">
+            View my GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="sea-blue section-divider"></div>
+  
+  <div class="page-section dark-section">
+    <div class="container">
+      <h4 class="center section-header">Puzzles and Games</h4>
+      <div class="row vcenter">
+        <div class="col m12 l7">
+          <p>Since I was a kid, I’ve been interested in puzzles, both mathematical and mechanical. My undergraduate senior thesis, titled <em><a href="/thesis">The Mathematics of the Rubik’s Cube</a></em>, analyzes the mathematical structure of the Rubik’s cube and its variants.</p>
+          <p>I’ve created JavaScript versions of several physical puzzles:</p>
+          <ul class="browser-default">
+            <li><a href="/games/twixt">TwixT</a></li>
+            <li><a href="/games/fifteen">Classic Fifteen Puzzle</a></li>
+            <li><a href="/games/rubiks">Rubik's Cube</a></li>
+          </ul>
+        </div>
+        <div class="col m12 l5 center">
+          <img src={% static 'pexels-byron-sullivan-5664491_cropped.jpg' %} class="section-circle-img">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="sea-blue section-divider"></div>
+
+  <div class="page-section light-section">
+    <div class="container">
+      <h4 class="center section-header">Genealogy</h4>
+      <div class="row vcenter">
+        <div class="col m12 l5 center">
+          <img src={% static 'kirchenbuch.jpg' %} class="section-circle-img">
+        </div>
+        <div class="col m12 l7">
+          <p>I’m an amateur genealogist and have traced my ancestry as far back as the 1500s on some lines.</p>
+          <p>I’ve indexed some record sets relevant to my family history which may be helpful for other researchers and made them searchable. I hope to add more record sets soon.</p>
+          <p><a href="/genealogy/search">Click here</a> to search the records.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <h2>Work Experience</h2>
-    <a href="/static/resume.pdf">View my Resume</a>
-    <a href="https://www.linkedin.com/in/kroche98/">View my LinkedIn</a>
-    <a href="https://www.github.com/kroche98">View my GitHub</a>
-  </div>
+  <div class="sea-blue section-divider"></div>
 
-  <div>
-    <h2>Puzzles and Games</h2>
-    <div>Since I was a kid, I've been lorem ipsum. Here's my <a href="/thesis">thesis</a>.</div>
-    <ul>
-      <li>
-        <a href="/games/twixt">TwixT</a>
-      </li>
-      <li>
-        <a href="/games/fifteen">Classic Fifteen Puzzle</a>
-      </li>
-      <li>
-        <a href="/games/rubiks">Rubik's Cube</a>
-      </li>
-    </ul>
-    <img src="http://via.placeholder.com/400x400" alt="">
-  </div>
-
-  <div>
-    <h2>Genealogy</h2>
-    <img src="http://via.placeholder.com/400x400" alt="">
-    {% lorem 2 p %}
-    <p><a href="/genealogy/search">Click here</a> to search.</p>
-  </div>
 {% endblock content %}
