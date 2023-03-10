@@ -1,15 +1,46 @@
 {% extends "master.html" %}
 
+{% load static %}
+
 {% block title %}
   TwixT
 {% endblock title %}
 
+{% block head %}
+  <link rel="stylesheet" href={% static 'twixt.css' %}>
+{% endblock head %}
+
 {% block content %}
-  <h1>TwixT</h1>
+  <h1 class="page-header">TwixT</h1>
 
-  <h2>Rules</h2>
-  {% lorem %}
+  <div class="page-section light-section">
+    <div class="container hcenter">
+      <div id="twixt-container">
+        <canvas id="twixt-canvas"></canvas>
+        <div id="controls-div" class="sans">
+          <div id="player-info" class="uppercase bold"></div>
+          <div id="state-info"></div>
+          <button class="plain-button" id="place-peg-button">Place Peg</button>
+          <button class="plain-button" id="remove-peg-button">Remove Peg</button>
+          <button class="plain-button" id="place-barrier-button">Place Barrier</button>
+          <button class="plain-button" id="remove-barrier-button">Remove Barrier</button>
+          <button class="plain-button" id="end-turn-button">End Turn</button>
+          <button class="plain-button" id="new-game-button">New Game</button>
+        </div>  
+      </div>
 
-  <div>Game goes here.</div>
-<div></div>
+      <h4 class="section-header center">Rules</h4>
+      <ol>
+        <li>Red plays first. Players move alternately by placing one peg at a time on the board. Pegs may be placed by a player in any empty peg hole except those in his opponent's border row.</li>
+        <li>When, after he has placed a peg, a player finds that he can link two or more of his pegs, he may place one or more links between these pegs to make a barrier. Pegs may be linked only when the distance between them corresponds to the diagonal of a 6-holed rectangle (or in other words, when the pegs are a chess knight’s move away from each other).</li>
+        <li>A barrier cannot be crossed. No barrier exists where a player could have linked but did not—whether the omission was intentional or unintentional.</li>
+        <li>Before placing a peg, a player may, if he desires, carefully remove any pegs and links he has previously placed on the board. However, he should be certain not to remove any pegs or links which would give his opponent the advantage.</li>
+        <li>To win, a player must connect his borders with an uninterrupted chain of linked pegs. If neither player can complete such a barrier, the game is a draw.</li>
+      </ol>
+    </div>
+  </div>
+  
+  <div class="sea-blue section-divider"></div>
+
+  <script src={% static 'twixt.min.js' %}></script>
 {% endblock content %}

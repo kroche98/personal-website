@@ -334,9 +334,6 @@ button.btn-floating {
   &:hover {
     box-shadow: none;
   }
-  &:focus {
-    background-color: rgba(0, 0, 0, .1);
-  }
   &.disabled,
   &.btn-lg-round[disabled] {
     background-color: $button-disabled-background !important;

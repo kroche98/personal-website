@@ -13,6 +13,15 @@
   padding-bottom: 50px;
 }
 
+.page-header {
+  background-color: color('sea-blue', 'base');
+  color: color('pale-cream', 'base');
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 25px;
+}
+
 .flex-center {
   display: flex;
   align-items: center;
@@ -31,6 +40,11 @@
   flex-wrap: wrap;
 }
 
+.vcenter-stretch {
+  @extend .vcenter;
+  align-items: stretch;
+}
+
 .hcenter-nowrap {
   @extend .flex-center;
   flex-direction: column;
@@ -39,6 +53,11 @@
 .hcenter {
   @extend .hcenter-nowrap;
   flex-wrap: wrap;
+}
+
+.hcenter-stretch {
+  @extend .hcenter;
+  align-items: stretch;
 }
 
 .flex-column {
@@ -62,4 +81,51 @@ h4.section-header {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+$plain-button-color: color('grey', 'lighten-1');
+$plain-button-color-current-selection: color('grey', 'darken-2');
+$plain-button-color-disabled: color('grey', 'lighten-3');
+
+.plain-button {
+  text-transform: uppercase;
+  border: 0;
+  padding: 6px;
+  cursor: pointer;
+  transition: background-color .2s;
+  background-color: $plain-button-color;
+  color: colors('shades', 'black');
+  &:focus,
+  &:hover {
+    box-shadow: none;
+  }
+  &:hover {
+    background-color: lighten($plain-button-color, 7%);
+  }
+  &:active {
+    background-color: lighten($plain-button-color, 14%)
+  }
+
+  &.current-selection {
+    background-color: $plain-button-color-current-selection;
+    color: color('shades', 'white');
+    font-weight: bold;
+
+    &:hover {
+      background-color: lighten($plain-button-color-current-selection, 7%);
+    }
+    &:active {
+      background-color: lighten($plain-button-color-current-selection, 14%);
+    }
+  }
+
+  &[disabled] {
+    cursor: default;
+    background-color: $plain-button-color-disabled;
+    color: colors('grey', 'darken-3');
+  }
 }

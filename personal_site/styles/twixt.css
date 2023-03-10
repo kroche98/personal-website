@@ -1,0 +1,33 @@
+#twixt-container {
+  display: flex;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+#twixt-canvas {
+  background: #fafafa;
+}
+
+#controls-div {
+  width: 200px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+}
+
+#player-info,
+#state-info,
+#place-peg-button,
+#remove-peg-button,
+#place-barrier-button,
+#remove-barrier-button,
+#end-turn-button,
+#new-game-button {
+  margin: 5px 0px 5px 10px;
+}
+
+#state-info {
+  min-height: 68px;
+}
