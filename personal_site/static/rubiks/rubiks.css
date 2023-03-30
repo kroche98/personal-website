@@ -1,0 +1,26 @@
+#puzzle-container {
+    margin: 5px;
+    box-sizing: content-box;
+}
+
+#canvas {
+  border: 1px solid #000000;
+}
+
+#puzzle-selector-div > button,
+#move-button-container > button,
+#scramble-button-container > button,
+#solve-button-container > button {
+	display: inline-block;
+  margin: 5px;
+}
+
+.plain-button.rubiks-move-button {
+  text-transform: none;
+  width: 36px;
+}
+
+#move-button-container {
+  max-width: 276px;
+  text-align: center;
+}

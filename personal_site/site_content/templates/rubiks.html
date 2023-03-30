@@ -1,15 +1,62 @@
 {% extends "master.html" %}
 
+{% load static %}
+
 {% block title %}
   Rubik's Cube
 {% endblock title %}
 
+{% block head %}
+  <link rel="stylesheet" href={% static 'rubiks/rubiks.css' %}>
+{% endblock head %}
+
 {% block content %}
-  <h1>Rubik's Cube</h1>
+  <h1 class="page-header">Rubik's Cube</h1>
 
-  <h2>Rules</h2>
-  {% lorem %}
+  <div class="page-section light-section">
+    <div class="container hcenter">
+      <div id="puzzle-selector-div"></div>
+      <div id="puzzle-container">
+        <canvas id="canvas" height="400" width="400"></canvas>
+      </div>
+      <div id="move-button-container"></div>
+      <div id="scramble-button-container"></div>
+      <div id="solve-button-container"></div>
+      <div id="solution-div"></div>
 
-  <div>Game goes here.</div>
-<div></div>
+      <h4 class="section-header center">Rules</h4>
+      <div>
+        <p>
+          The Rubik's Cube is a combination puzzle which was invented in 1974 by Ernő Rubik.
+          Since its invention, more than 400 million cubes have been sold.
+          The goal is to scramble the cube and then restore it to its original state where each face is a single solid color.
+        </p>
+        <p>
+          The cube has inspired numerous variants. Here you can interact with the original 3×3×3 cube, a 2×2×2 cube, or a 3×3×3 “Cubix Tube.”
+        </p>
+        <p>
+          The moves corresponding to 90º clockwise rotations are denoted by L, R, F, B, U, and D.
+          The inverse moves (corresponding to 90º counterclockwise rotations) are denoted by Li, Ri, Fi, Bi, Ui, and Di.
+          The moves corresponding to 180º rotations are denoted by L2, R2, F2, B2, U2, and D2.
+        </p>
+        <p>
+          The maximum number of moves required to solve the regular 3×3×3 cube (often called “God’s number”) is 20, 
+          <a href="https://www.cube20.org/">as was proved in 2010 by Tomas Rokicki, Herbert Kociemba, et al</a>.
+          For the 2×2×2 cube, God’s number is 11. This number is small enough that I was able to write a meet-in-the-middle solution algorithm that runs in your browser and can always solve the 2×2×2 cube optimally.
+          For the 3×3×3 cube, the size of the search space is too large, and a solver using the same strategy would run out of memory.
+        </p>
+        <p>
+          The cube has a deep mathematical structure related to group theory.
+          To see my senior thesis which explores these topics and describes the “Cubix Tube” variant, <a href="/thesis">click here</a>.
+        </p>
+        <p>
+          I'm working on developing a better interface, but for now you have to click the move buttons to interact with the cube.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sea-blue section-divider"></div>
+
+  <script src={% static 'rubiks/rubiksMain.js' %}></script>
 {% endblock content %}
